@@ -1,3 +1,14 @@
+      ++++++++++++  HTML Q/A +++++++++++++++++
+
+Attributes: Attributes are used to add more information to the tag.
+    
+
+
+
+
+
+
+
 split(): Ye method sirf strings par kaam karta hai, numbers par nahi.
 
 reverse(): Ye method arrays par kaam karta hai, toh pehle number ko string me convert karke usse array banate hai.
