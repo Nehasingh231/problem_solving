@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    /* margin: 0;
+    padding: 0; */
+}
+.guess {
+    text-align: center;
+}
+.btn{
+   padding: 10px;
+   font-size: 30px;
+}
+.start{
+    cursor: not-allowed;
+}
+.userinput{
+    padding: 15px;
+    
+}
