@@ -31,6 +31,9 @@ function clock () {
 }
 requestAnimationFrame(clock);
 
+ 
+
+
 const info = {name: "neha singh", "age": 25}
 console.log(info)
 let userString = JSON.stringify(info)
