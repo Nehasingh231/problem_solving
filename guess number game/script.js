@@ -1,38 +1,41 @@
-const userInput = document.querySelector(".userinput");
-const form = document.querySelector(".form");
-const result = document.querySelector(".result");
-const allGuesses = document.querySelector(".all-guesses")
-const submitBtn = document.querySelector(".submit");
-const restartGame = document.querySelector(".restart")
+const message = document.getElementById("message");
+const attemptsEl = document.getElementById("attempts");
 
-function game() { // we wrapped our code in function it helps in this way that noone can see random number from console.
-const allGuessesArray = []
-let randomNumber = Math.round(Math.random() * 100);
-// console.log(randomNumber);
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+console.log(randomNumber);
+let attempts = 0;
+let maxAttempts = 10;
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    const userInputValue = parseInt(userInput.value) // parseInt used for convert string into number
-    if(userInputValue < randomNumber) {
-       result.innerText = "Too Low"
-    } else if (userInputValue > randomNumber) {
-        result.innerText = "Too High"
-    } else {
-        result.innerText = "Congrats! You guess right Number"
-        restartGame.disabled = false
-        submitBtn.disabled = true
-    }
-     allGuessesArray.push(userInputValue);
-     allGuesses.innerText = "Your Guesses:" + allGuessesArray.join(', ')//join use to convert in string and add comaas
-    form.reset() // is used for empty input field
-})
+function checkGuess() {
+    const guessInput = Number(document.getElementById("guess").value);
+   attempts++;
+   attemptsEl.innerText = `Attempts: ${attempts}`;
 
-restartGame.addEventListener("click", () => {
-  result.innerText = "";
-  allGuesses.innerText = "";
-  submitBtn.disabled = false;
-  restartGame.disabled = true;
-  randomNumber =  Math.round(Math.random() * 100);
-})
-}
-game();
+   if(attempts > maxAttempts) {
+    message.innerText = "Game Over! You've used all your attempts.";
+    attemptsEl.innerText = "Attempts: 0";
+    message.style.color = "red";
+    return;
+   }
+
+    if(guessInput === randomNumber) {
+        message.innerText = `Congratulations! You guessed the right number! It was ${randomNumber}`;
+        message.style.color = "green";
+    } else if (guessInput > randomNumber) {
+         message.innerText = "Too high! Try again.";
+            message.style.color = "red";
+        } else{
+            message.innerText = "Too low! Try again.";
+            message.style.color = "red";
+           
+        }
+
+   }
+
+   function restart(){
+       randomNumber = Math.floor(Math.random() * 100) + 1;// new random no
+    attempts = 0;
+     attemptsEl.innerText = `Attempts: ${attempts}`;
+    message.innerText = ""
+    document.getElementById("guess").value = "";
+   }

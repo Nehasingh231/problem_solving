@@ -3,25 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Challenge</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
 </head>
 <body>
-    <div class="guess">
-        <h3> GUESS A NUMBER</h3>
-        <hr>
-        <p>Guess a number between 0 to 100</p>
-        <form class="form">
-            <input class="userinput" type="number" placeholder="Enter a number.." max="100" required />
-            <div class="btn">
-                <button class="submit">Submit</button>
-                <button disabled class="restart">Restart</button>
+
+    <style>
+        body{
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+        }
+        h2{
+            text-align: center;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 40px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex-direction: column; */
+            gap: 20px;
+            margin-top: 100px;
+        }
+
+        input{
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            padding-left: 10px;
+        }
+        button{   
+            border-radius: 5px;
+            border: none;
+            background-color: #cf7cac;
+            color: white;
+            padding: 8px 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .restartBtn{
+            display: flex;
+            margin-top: 20px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .message-container{
            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+    </style>
+
+    <h2>Guess Number between 1 to 100, It's Fun Game</h2>
+    <div class="container">
+        <input type="number" id="guess" placeholder="Give a Try..." />
+        <div>
+
+            <button id="checkGuess" onclick="checkGuess()">Check</button>
         </div>
-    </form>
-    <p class="result"></p>
-    <p class="all-guesses"></p>
-</div>
-<script src="script.js"></script>
+       </div>
+       <div class="message-container">
+        <p id="message"></p>
+        <p id="attempts">Attempts: 0</p>
+        <p id="score">Score: 0</p>
+    </div>
+    
+    <div class="restartBtn"><button id="restart" onclick="restart()">Restart</button></div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
