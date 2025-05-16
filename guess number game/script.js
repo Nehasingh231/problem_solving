@@ -18,6 +18,12 @@ function checkGuess() {
     return;
    }
 
+if(guessInput > 100 || guessInput < 1) {
+    message.innerText = "Please enter a number between 1 and 100.";
+    message.style.color = "red";
+    return;
+}
+
     if(guessInput === randomNumber) {
         message.innerText = `Congratulations! You guessed the right number! It was ${randomNumber}`;
         message.style.color = "green";
