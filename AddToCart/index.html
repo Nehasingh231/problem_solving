@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+     <style>
+    body {
+      font-family: Arial;
+      margin: 20px;
+    }
+    .product, .cart-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+    button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    #cart {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+    
+    <h2>Grocery Store</h2>
+      <h1>🛒 Grocery Store</h1>
+
+  <div id="product-list"></div>
+
+  <div id="cart">
+    <h2>Your Cart:</h2>
+    <div id="cart-items"></div>
+    <h3 id="total">Total: ₹0</h3>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+    <script src="index.js"></script>
+</body>
+</html>
