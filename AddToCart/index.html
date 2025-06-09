@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
-     <style>
+  <meta charset="UTF-8">
+  <title>Mini Cart</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
     body {
-      font-family: Arial;
-      margin: 20px;
-    }
-    .product, .cart-item {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
-    }
-    button {
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-    #cart {
-      margin-top: 30px;
-    }
+  font-family: Arial;
+  margin: 20px;
+  background-color: #f9f9f9;
+}
+
+.product,
+.cart-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.btn {
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn.delete {
+  background-color: #e53935;
+}
+
   </style>
+
 </head>
 <body>
-    
-    <h2>Grocery Store</h2>
-      <h1>🛒 Grocery Store</h1>
 
+  <h2>🛍️ Products</h2>
   <div id="product-list"></div>
 
-  <div id="cart">
-    <h2>Your Cart:</h2>
-    <div id="cart-items"></div>
-    <h3 id="total">Total: ₹0</h3>
-    <button onclick="checkout()">Checkout</button>
-  </div>
-    <script src="index.js"></script>
+  <h2>🛒 Cart</h2>
+  <div id="cart-list"></div>
+  <h3>Total: ₹<span id="total-price">0</span></h3>
+
+  <script src="index.js"></script>
 </body>
 </html>
