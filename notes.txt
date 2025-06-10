@@ -1,0 +1,65 @@
+      ++++++++++++  HTML Q/A +++++++++++++++++
+
+Attributes: Attributes are used to add more information to the tag.
+    
+
+
+
+
+
+
+
+split(): Ye method sirf strings par kaam karta hai, numbers par nahi.
+
+reverse(): Ye method arrays par kaam karta hai, toh pehle number ko string me convert karke usse array banate hai.
+
+join(): Array ko phir se string me convert kar deta hai.
+
+The trim() method in JavaScript is used to remove whitespace from both ends of a string. It does not affect whitespace inside the string.
+
+
+
+array.map((element, index, array) => {
+  // return new value for each element
+});
+element → (required) current item
+
+index → (optional) index of current item
+
+array → (optional) the whole array
+
+✅ You must write element if you're returning a value.
+✅ Use _ if you want to skip it but use index.
+
+
+
+
+
+array.filter((element, index, array) => {
+  // return true to keep, false to remove
+});
+element → (required) current item
+
+index → (optional) index of current item
+
+array → (optional) the whole array
+
+✅ You must return true or false to keep/remove the item.
+
+
+
+array.reduce((accumulator, currentValue, index, array) => {
+  // return updated accumulator
+}, initialValue);
+accumulator → (required) running total or result
+
+currentValue → (required) current item in array
+
+index → (optional) index of current item
+
+array → (optional) the whole array
+
+initialValue → (required) starting value of accumulator
+
+✅ Always return the updated accumulator.
+✅ Always provide initialValue to avoid bugs.
